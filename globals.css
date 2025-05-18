@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: white;
+  border-bottom: 1px solid #e6e9ef;
+  position: relative;
+  z-index: 100;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 32px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  margin-left: 20px;
+}
+
+.nav-item {
+  margin: 0 15px;
+  color: #676879;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: #6c6cff;
+}
+
+.nav-item::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23676879' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 5px;
+}
+
+.nav-item.no-arrow::after {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.action-link {
+  margin: 0 10px;
+  color: #676879;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.action-link:hover {
+  color: #6c6cff;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.btn-outline {
+  border: 1px solid #6c6cff;
+  color: #6c6cff;
+  background-color: white;
+}
+
+.btn-primary {
+  background-color: #6352ff;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #5346d8;
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* Dropdown Styles - Fixed positioning issue */
+.dropdown {
+  position: absolute;
+  top: 72px; /* Adjusted to match header height */
+  left: 0;
+  width: 100%;
+  background-color: white;
+  display: none;
+  z-index: 99;
+  border-bottom: 1px solid #e6e9ef;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown.active {
+  display: block;
+}
+
+.dropdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 98;
+  display: none;
+}
+
+.dropdown-overlay.active {
+  display: block;
+}
+
+.dropdown-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.dropdown-column {
+  flex: 1;
+  padding: 30px;
+  border-right: 1px solid #f0f0f0;
+}
+
+.dropdown-column:last-child {
+  border-right: none;
+}
+
+.dropdown-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  color: #6352ff;
+}
+
+.dropdown-item-icon {
+  width: 32px;
+  height: 32px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.dropdown-item-content h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.dropdown-item-content p {
+  font-size: 14px;
+  color: #676879;
+}
+
+.product-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.product-icon.work {
+  background-color: #6352ff;
+}
+
+.product-icon.crm {
+  background-color: #00d1bd;
+}
+
+.product-icon.dev {
+  background-color: #00ca72;
+}
+
+.product-icon.service {
+  background-color: #ff5ac4;
+}
+
+.enterprise-icon {
+  background-color: #6352ff;
+}
+
+.smb-icon {
+  background-color: #6352ff;
+}
+
+.new-icon {
+  background-color: #ff3d57;
+}
+
+.bottom-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 30px;
+  background-color: #f5f6fa;
+}
+
+.bottom-action {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+}
+
+.bottom-action svg {
+  margin-left: 5px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-dashboard {
+  color: #676879;
+}
+
+.icon-integration {
+  color: #676879;
+}
+
+.icon-automation {
+  color: #676879;
+}
+
+.icon-ai {
+  color: #676879;
+}
+
+.icon-infrastructure {
+  color: #676879;
+}
+
+.pie-chart {
+  width: 20px;
+  height: 20px;
+}
